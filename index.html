@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Calorie Counter</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<nav>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">About</a></li>
+			<li><a href="#">Contact</a></li>
+		</ul>
+	</nav>
+	<main>
+		<h1>Calorie Counter</h1>
+        <div class="content-container">
+		<form>
+			<label for="foodName">Food Name:</label>
+			<input type="text" id="foodName" name="foodName" required><br><br>
+			<label for="calories">Calories:</label>
+			<input type="number" id="calories" name="calories" required><br><br>
+			<label for="portionSize">Portion Size:</label>
+			<input type="number" id="portionSize" name="portionSize" required><br><br>
+			<input type="button" value="Add" onclick="addFood()">
+			<input type="button" value="Clear" onclick="clearList()">
+		</form>
+		<div id="totalCalories"></div>
+		<div id="foodListHeading">Food List:</div>
+		<div id="ListOfFood"></div>
+    </div>
+	</main>
+	<script src="script.js"></script>
+</body>
+</html>

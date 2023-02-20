@@ -1,0 +1,81 @@
+body {
+	background-color: aqua;
+}
+
+
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: #333;
+	padding: 10px 20px;
+}
+
+nav ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: flex-end;
+}
+
+nav ul li {
+	margin-right: 20px;
+}
+
+nav ul li a {
+	color: #fff;
+	text-decoration: none;
+	font-size: 20px;
+}
+
+h1 {
+	text-align: center;
+    margin-top: 50px;
+}
+
+form {
+	margin: 20px;
+}
+
+label {
+	display: inline-block;
+	width: 100px;
+	text-align: right;
+}
+
+input[type="text"], input[type="number"] {
+	width: 200px;
+}
+
+.foodName{
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+input[type="button"] {
+	margin-left: 110px;
+}
+
+#totalCalories {
+	margin: 20px;
+	font-size: 24px;
+}
+
+.content-container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 150px;
+}
+
+#ListOfFood {
+	margin: 20px;
+	font-size: 24px;
+}
+
+#foodListHeading {
+	margin: 20px;
+	font-size: 24px;
+	font-weight: bold;
+}
