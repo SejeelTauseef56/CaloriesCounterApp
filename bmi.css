@@ -1,0 +1,349 @@
+body {
+	background-color:  #ffffff;
+	font-family: Arial, sans-serif;
+	font-size: 16px;
+	margin: 0;
+
+  }
+
+.titleheader{
+display: block;
+  text-align: center;
+  margin-top: 60px;
+
+}
+
+.intro-text {
+	background: rgb(179,200,237);
+background: linear-gradient(90deg, rgba(179,200,237,1) 0%, rgba(0,178,236,1) 50%, rgba(179,200,237,1) 100%);
+	color: #fff;
+	padding: 80px 20px;
+	text-align: center;
+  margin-top: 34px;
+}
+.intro-text h1 {
+	font-size: 48px;
+	font-weight: 700;
+	margin-bottom: 20px;
+  color: #fff;
+
+}
+.intro-text h2 {
+	font-size: 24px;
+	font-weight: 400;
+	margin-bottom: 40px;
+  margin-top: 40px;
+}
+.intro-text .scroll-btn {
+	display: inline-block;
+	padding: 10px 20px;
+	background-color: #fff;
+	color: #00a9e0;
+	font-size: 18px;
+	font-weight: 600;
+	border-radius: 4px;
+	text-decoration: none;
+	transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+.intro-text .scroll-btn:hover {
+	background-color: #00a9e0;
+	color: #fff;
+}
+
+nav {
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	background-color: #fff;
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 15px 20px;
+  }
+  
+  nav ul {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+  }
+  
+  .nav-left {
+	float: left;
+	font-weight: bold;
+	padding-top: 5px;
+	font-size: 24px;
+	font-weight: 550;
+	color: #0066EE;
+	font-family: "Inter",Helvetica,Arial,-apple-system,sans-serif;
+	letter-spacing: 2px;
+	display: block;
+  }
+  
+  .nav-left a {
+	text-decoration: none;
+	color: #0f53ff;
+  }
+  
+  .nav-left a:hover {
+	color: #166ab3;
+  }
+  
+  .login-link {
+	color: #0066EE;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #0066EE;
+	padding: 10px 20px;
+	border-radius: 4px;
+	transition: all 0.3s ease-in-out;
+	float: right;
+  }
+  
+  .login-link:hover {
+	background-color: #0066EE;
+	color: #ffffff;
+  }
+
+  .bmi-calculator {
+	color: #0066EE;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #0066EE;
+	padding: 10px 20px;
+    margin-right: 10px;
+	border-radius: 4px;
+	transition: all 0.3s ease-in-out;
+	float: right;
+  }
+  
+  .bmi-calculator:hover {
+	background-color: #0066EE;
+	color: #ffffff;
+  }
+  
+
+  .track-progress {
+	color: #0066EE;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #0066EE;
+	padding: 10px 20px;
+    margin-right: 10px;
+	border-radius: 4px;
+	transition: all 0.3s ease-in-out;
+	float: right;
+  }
+  
+  .track-progress:hover {
+	background-color: #0066EE;
+	color: #ffffff;
+  }
+
+/* Style for the wrapper */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; /* Set the height of the container */
+}
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 50px;
+  text-align: center;
+}
+
+/* CSS */
+.button-58 {
+	align-items: center;
+	background-color: #06f;
+	border: 2px solid #06f;
+	box-sizing: border-box;
+	color: #fff;
+	cursor: pointer;
+	display: inline-flex;
+	fill: #000;
+	/* font-family: Inter,sans-serif; */
+	font-size: 19px;
+	font-weight: 600;
+	height: 48px;
+	justify-content: center;
+	letter-spacing: 0.5px;
+	line-height: 24px;
+	min-width: 140px;
+	outline: 0;
+	padding: 0 17px;
+	text-align: center;
+	text-decoration: none;
+	transition: all .3s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+  }
+  
+  .button-58:focus {
+	color: #171e29;
+  }
+  
+  .button-58:hover {
+	background-color: #3385ff;
+	border-color: #3385ff;
+	fill: #06f;
+  }
+  
+  .button-58:active {
+	background-color: #3385ff;
+	border-color: #3385ff;
+	fill: #06f;
+  }
+  
+  @media (min-width: 768px) {
+	.button-58 {
+	  min-width: 170px;
+	}
+  }
+
+h1 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 50px;
+  font-size: 36px;
+  font-weight: bold;
+  color: #0066EE;
+    background-repeat: no-repeat;
+  background-size: contain;
+  height: 20px;
+}
+/* Style for the form container */
+.form-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  font-family: Arial, sans-serif;
+  height: 400px; /* Set the height of the container */
+  /* background-color: #f2f2f2; Add a light background color */
+  border-radius: 10px; /* Add some rounded corners */
+  /* box-shadow: 0 0 10px gray; Add a subtle box shadow */
+}
+#weight-bmi{
+  
+}
+
+label {
+  display: inline-block;
+  margin-bottom: 10px;
+}
+/* Style for the input fields */
+input[type="text"],
+select {
+  padding: 10px;
+  width: 100%;
+  border-radius: 5px;
+  border: none;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+}
+
+#metric-system {
+  width: 140px;
+	background-color: rgb(79, 127, 223);
+	color: #ffffff;
+
+	border: none;
+	padding: 10px;
+	margin-top: 30px;
+	margin-bottom: 20px;
+	
+	margin-left: 80px;
+	
+	font-family: "Graphik", "Helvetica Neue", "Helvetica", "Arial", sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+	line-height: 1.5;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+	  0 6px 20px 0 rgba(0, 0, 0, 0.1);
+	cursor: pointer;
+	transition: all .3s;
+	user-select: none;
+	-webkit-user-select: none;
+	touch-action: manipulation;
+}
+
+/* Style for the submit button */
+input[type="submit"] {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+input[type="submit"]:hover {
+  background-color: #005F6B;
+}
+
+#activity, #gender {
+	border: 2px solid #ccc;
+	padding: 10px;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1),
+	  0 6px 20px 0 rgba(0, 0, 0, 0.1);}
+
+
+button {
+  padding: 10px 20px;
+  margin-top: 10px;
+  background-color: #008CBA;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #005F6B;
+}
+
+/* Style for the result div */
+#result {
+  background-color: white;
+  display: flex;
+  margin-top: 20px;
+  justify-content: center;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  border: 2px solid #000;
+  height: 100%;
+  width: 900px;
+  padding: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  color: black; /* Set the text color to black */
+}
+
+#result-bmi {
+  background-color: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 2px solid #000;
+  padding: 20px;
+  margin-top: 0;
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  height: 100%;
+  width: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+

@@ -1,34 +1,54 @@
-let totalCalories = 0;
-let foodList = [];
+// Initialize food log array
+var foodLog = [];
 
+// Add food to the log and update the UI
 function addFood() {
-let foodName = document.getElementById("foodName").value;
-let calories = parseInt(document.getElementById("calories").value);
-let portionSize = document.getElementById("portionSize").value;
+  var foodName = document.getElementById("food-name").value;
+  var protein = parseInt(document.getElementById("protein").value);
+  var fat = parseInt(document.getElementById("fat").value);
+  var carbs = parseInt(document.getElementById("carbs").value);
+  var portionSize = parseInt(document.getElementById("portion-size").value);
+  
+  // Calculate calories
+  var calories = (protein * 4) + (carbs * 4) + (fat * 9);
+  var totalCalories = parseInt(document.getElementById("total-calories").textContent);
+  totalCalories += calories;
+  document.getElementById("total-calories").textContent = totalCalories;
+  
+  // Add food to the log
+  var food = {
+    foodName: foodName,
+    protein: protein,
+    fat: fat,
+    carbs: carbs,
+    portionSize: portionSize,
+    calories: calories
+  };
+  foodLog.push(food);
+  
+  // Update UI
+  var foodLogTable = document.getElementById("food-log");
+  var newRow = foodLogTable.insertRow(-1);
+  var foodNameCell = newRow.insertCell(0);
+  var proteinCell = newRow.insertCell(1);
+  var fatCell = newRow.insertCell(2);
+  var carbsCell = newRow.insertCell(3);
+  var portionSizeCell = newRow.insertCell(4);
+  var caloriesCell = newRow.insertCell(5);
+  foodNameCell.textContent = foodName;
+  proteinCell.textContent = protein;
+  fatCell.textContent = fat;
+  carbsCell.textContent = carbs;
+  portionSizeCell.textContent= portionSize;
+  caloriesCell.textContent = calories;
+  
 
-if (foodName === "" || isNaN(calories) || portionSize === "") {
-alert("Please enter a food name, portion size, and calorie count.");
-return;
-}
-
-totalCalories += calories;
-foodList.push({ name: foodName, calories: calories, portionSize: portionSize });
-document.getElementById("foodName").value = "";
-document.getElementById("calories").value = "";
-document.getElementById("portionSize").value = "";
-document.getElementById("totalCalories").innerHTML = "Total Calories: " + totalCalories;
-
-let foodListHtml = "";
-for (let i = 0; i < foodList.length; i++) {
-foodListHtml += foodList[i].name + " (" + foodList[i].portionSize + " - " + foodList[i].calories + " calories)<br>";
-}
-document.getElementById("ListOfFood").innerHTML = "Food List:<br>" + foodListHtml;
-}
-
-function clearList() {
-totalCalories = 0;
-foodList = [];
-document.getElementById("totalCalories").innerHTML = "Total Calories: " + totalCalories;
-document.getElementById("ListOfFood").innerHTML = "Food List: ";
+  
+  // Clear form fields
+  document.getElementById("food-name").value = "";
+  document.getElementById("protein").value = "";
+  document.getElementById("fat").value = "";
+  document.getElementById("carbs").value = "";
+  document.getElementById("portion-size").value = "";
 }
 

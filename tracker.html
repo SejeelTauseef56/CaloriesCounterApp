@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Food Tracker</title>
+</head>
+<body>
+  <h1>Food Tracker</h1>
+  <form>
+    <label for="search-input">Search for food:</label>
+    <input type="text" id="search-input">
+    <button type="submit">Search</button>
+  </form>
+  <ul id="search-results"></ul>
+  <h2>Saved Foods</h2>
+  <ul id="saved-foods"></ul>
+
+  <script>
+   const searchForm = document.querySelector('form');
+const searchInput = document.querySelector('#search-input');
+const searchResults = document.querySelector('#search-results');
+const savedFoods = document.querySelector('#saved-foods');
+
+searchForm.addEventListener('submit', async (event) => {
+  event.preventDefault();
+
+  const query = searchInput.value;
+  const response = await fetch(`https://api.edamam.com/api/food-database/v2/nutrients?app_id=5c9eaeff&app_key=
+ca65ae24f3d56056e1e6dd17e8a02aac`, {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify({
+    "query": query
+  })
+});
+
+  const data = await response.json();
+
+  searchResults.innerHTML = '';
+  const li = document.createElement('li');
+  li.textContent = `${data.food.label} - ${data.food.nutrients.ENERC_KCAL} calories`;
+  const saveButton = document.createElement('button');
+  saveButton.textContent = 'Save';
+  saveButton.addEventListener('click', async () => {
+    const { label, calories } = data.food;
+    await fetch('/api/save-food', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ label, calories })
+    });
+    loadSavedFoods();
+  });
+  li.appendChild(saveButton);
+  searchResults.appendChild(li);
+});
+
+async function loadSavedFoods() {
+  const response = await fetch('/api/saved-foods');
+  const data = await response.json();
+
+  savedFoods.innerHTML = '';
+  data.forEach((food) => {
+    const li = document.createElement('li');
+    li.textContent = `${food.label} - ${food.calories} calories`;
+    savedFoods.appendChild(li);
+  });
+
+  const totalCaloriesResponse = await fetch('/api/total-calories');
+  const totalCaloriesData = await totalCaloriesResponse.json();
+  const totalCaloriesLi = document.createElement('li');
+  totalCaloriesLi.textContent = `Total Calories: ${totalCaloriesData.totalCalories}`;
+  savedFoods.appendChild(totalCaloriesLi);
+}
+
+loadSavedFoods();
+
+   
+
+  </script>
+</body>
+</html>

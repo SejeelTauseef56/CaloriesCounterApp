@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>MyFitnessPal Login Form</title>
+	<link rel="stylesheet" type="text/css" href="login.css">
+</head>
+<body>
+    <nav>
+		<ul>
+			<li class="nav-left"><a href="index.html">myCaloriepal</a></li>
+			<a href="login.html" class="login-link">Log In</a>
+            <a href="bmi_calculator.html" class="bmi-calculator">Calculate BMI</a>
+			<a href="progress.html"class="track-progress">Track Progress</a>
+
+		</ul>
+	</nav>
+	<div class="login-box">
+		<h2>Log In</h2>
+		<form>
+			<label for="username">Username</label>
+			<input type="text" name="username" id="username" required>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" required>
+			<input type="submit" value="Log In">
+			<div class="remember">
+				<input type="checkbox" name="remember" id="remember">
+				<label for="remember">Remember Me</label>
+			</div>
+		</form>
+		<div class="sign-up">
+			<p>Don't have an account? <a href="#">Sign up</a></p>
+		</div>
+	</div>
+</body>
+</html>

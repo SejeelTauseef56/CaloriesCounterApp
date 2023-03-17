@@ -1,38 +1,92 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-	<title>Calorie Counter</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Food Logger</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="script.js"></script>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-	<nav>
+    <nav>
 		<ul>
-			<li class="nav-left"><a href="#">Calorie Counter</a></li>
+			<li class="nav-left"><a href="index.html">myCaloriepal</a></li>
+			<a href="tracker.html" class="login-link">Log In</a>
+			<a href="bmi_calculator.html" class="bmi-calculator">Calculate BMI</a>
+			<a href="progress.html"class="track-progress">Track Progress</a>
 		</ul>
 	</nav>
-	<main>
-		<div class="text-container">
-			<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam pulvinar nibh at enim tincidunt, vel pellentesque nisi varius. Phasellus non velit risus. Integer euismod arcu a tellus volutpat, id iaculis urna dictum. Proin in risus metus. In vel odio tristique, semper velit nec, volutpat arcu. Integer auctor in quam auctor aliquam. Sed feugiat semper libero eu mollis. Duis pretium lorem justo, vel maximus purus lobortis vel. Etiam eget felis tellus. Ut id congue orci. In in aliquam nibh, eget pretium odio. Suspendisse sollicitudin fringilla libero, eu sagittis ante blandit sed. Curabitur eget purus semper, convallis dolor sit amet, congue justo. Etiam id elit sed purus fermentum accumsan vel in turpis.</p>
-		</div>
-		<div class="content-container">
-			<form>
-				<label for="foodName">Food Name:</label>
-				<input type="text" id="foodName" name="foodName" required><br><br>
-				<label for="calories">Calories:</label>
-				<input type="number" id="calories" name="calories" required><br><br>
-				<label for="portionSize">Portion Size:</label>
-				<input type="number" id="portionSize" name="portionSize" required><br><br>
-				<input type="button" value="Add" onclick="addFood()">
-				<input type="button" value="Clear" onclick="clearList()">
-			</form>
-			<div id="totalCalories"></div>
-			<div id="foodListHeading">Food List:</div>
-			<div id="ListOfFood"></div>
-		</div>
-		<div class="image-container">
-			<img src="https://www.myfitnesspal.com/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fhero-slice%402x.e3eec8a8.png&w=1920&q=75" alt="oatmeal" class="oatmeal-image">
-		</div>
-	</main>
-	<script src="script.js"></script>
+    
+
+    <div class="container">
+        <form>
+            <div class="form-container">
+                <label for="food-name">Food Name:</label>
+                <input type="text" id="food-name" required>
+
+                <label for="protein">Protein (grams):</label>
+                <input type="number" id="protein" required>
+
+                <label for="fat">Fat (grams):</label>
+                <input type="number" id="fat" required>
+
+                <label for="carbs">Carbs (grams):</label>
+                <input type="number" id="carbs" required>
+
+                <label for="portion-size">Portion Size:</label>
+                <input type="number" id="portion-size" required>
+
+                <button type="button" onclick="addFood()">Add</button>
+            </div>
+
+            <div class="tooltip">
+                <button class="info-button">How to Find Macros in Your Food</button>
+                <span class="tooltip-text">
+                  Macros, short for macronutrients, are the three key nutrients
+                  that make up the majority of the food we eat: protein, fat, and
+                  carbohydrates. To find the macros in your food, check the
+                  nutritional information on the packaging or look up the food
+                  online. You can also use a food tracking app to get the macros for
+                  specific foods. Be sure to measure the portion size of your food
+                  to get an accurate count of the macros you are consuming.
+                </span>
+              </div>
+
+        </form>
+        <div class="panel">
+            <h3>What to do on this page:</h3>
+            <ul>
+              <li>Enter your daily intake of fat, carbs, and protein in grams.</li>
+              <li>Click the "Calculate" button to see your total calorie intake.</li>
+              <li>Use the results to plan your meals and track your progress.</li>
+            </ul>
+          </div>
+          
+        <div class="log-container">
+            <h2>Food Log</h2>
+
+            <table id="food-log">
+                <thead>
+                    <tr>
+                        <th>Food Name</th>
+                        <th>Protein (g)</th>
+                        <th>Fat (g)</th>
+                        <th>Carbs (g)</th>
+                        <th>Portion Size</th>
+                        <th>Calories</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+
+            <p>Total Calories: <span id="total-calories">0</span></p>
+        </div>
+
+       
+    </div>
+
 </body>
 </html>

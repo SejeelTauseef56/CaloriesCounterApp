@@ -1,110 +1,260 @@
+/* Add some basic styles to the body */
 body {
-	background-color: #f5f5f5;
+    margin: 0;
+    font-family: Arial, sans-serif;
 }
 
-nav {
+
+/* Tooltip */
+.tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .tooltip .info-button {
+    background-color: #3371b8;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .tooltip .tooltip-text {
+    visibility: hidden;
+    width: 200px;
+    background-color: #3371b8;
+    color: #fff;
+    text-align: center;
+    border-radius: 5px;
+    padding: 10px;
+    position: absolute;
+    z-index: 1;
+    bottom: 125%;
+    left: 50%;
+    margin-left: -100px;
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  
+  .tooltip .tooltip-text::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #3371b8 transparent transparent transparent;
+  }
+  
+  .tooltip:hover .tooltip-text {
+    visibility: visible;
+    opacity: 1;
+  }
+  .panel {
+    position: absolute;
+    top: 130px;
+    right: 50px;
+    width: 300px;
+    background-color: #f1f1f1;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .panel h3 {
+    margin-top: 0;
+  }
+  
+  .panel ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .panel li {
+    margin-bottom: 10px;
+  }
+  
+  nav {
 	position: absolute;
 	top: 0;
 	right: 0;
 	left: 0;
 	background-color: #fff;
-	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-	padding: 10px 20px;
-}
-
-nav ul {
+	box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+	padding: 15px 20px;
+  }
+  
+  nav ul {
 	margin: 0;
 	padding: 0;
 	list-style: none;
-}
-
-.nav-left {
+  }
+  
+  .nav-left {
 	float: left;
-	font-weight: bold;
+	font-weight:bold;
+	padding-top: 5px;
 	font-size: 24px;
-	color: #0f4d7d;
-	text-transform: uppercase;
+	font-weight: 550;
+	color: #0066EE;
+	font-family: "Inter",Helvetica,Arial,-apple-system,sans-serif;
 	letter-spacing: 2px;
-}
-
-.nav-left a {
+	display: block;
+  }
+  
+  .nav-left a {
 	text-decoration: none;
-	color: #0f4d7d;
-}
-
-.nav-left a:hover {
+	color: #0f53ff;
+  }
+  
+  .nav-left a:hover {
 	color: #166ab3;
+  }
+  
+  .login-link {
+	color: #0066EE;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #0066EE;
+	padding: 10px 20px;
+	border-radius: 4px;
+	transition: all 0.3s ease-in-out;
+	float: right;
+  }
+  
+  .login-link:hover {
+	background-color: #0066EE;
+	color: #ffffff;
+  }
+
+  .bmi-calculator {
+	color: #0066EE;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #0066EE;
+	padding: 10px 20px;
+    margin-right: 10px;
+	border-radius: 4px;
+	transition: all 0.3s ease-in-out;
+	float: right;
+  }
+  
+  .bmi-calculator:hover {
+	background-color: #0066EE;
+	color: #ffffff;
+  }
+  
+
+  .track-progress {
+	color: #0066EE;
+	text-decoration: none;
+	font-size: 18px;
+	font-weight: bold;
+	border: 2px solid #0066EE;
+	padding: 10px 20px;
+    margin-right: 10px;
+	border-radius: 4px;
+	transition: all 0.3s ease-in-out;
+	float: right;
+  }
+  
+  .track-progress:hover {
+	background-color: #0066EE;
+	color: #ffffff;
+  }
+
+/* Style the page header */
+
+.container {
+    margin-top: 100px;
 }
 
-h1 {
-	text-align: center;
-	margin-top: 50px;
-}
-
+/* Style the form */
 form {
-	margin: 20px;
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ddd;
+    background-color: #f9f9f9;
 }
 
+/* Style the info container */
+.info-container {
+    width: 35%;
+    padding: 20px;
+    background-color: #f2f2f2;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    float: right;
+    margin: 20px;
+}
+
+.info-container h2 {
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+}
+
+.info-container p {
+    font-size: 1rem;
+}
+
+/* Style the form labels */
 label {
-	display: inline-block;
-	width: 100px;
-	text-align: right;
+    display: block;
+    margin-bottom: 10px;
 }
 
+/* Style the form inputs */
 input[type="text"],
 input[type="number"] {
-	width: 200px;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+    margin-bottom: 10px;
 }
 
-.foodName {
-	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2),
-		0 6px 20px 0 rgba(0, 0, 0, 0.19);
+/* Style the Add button */
+button[type="button"] {
+    background-color: #3371b8;
+    color: #fff;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
 }
 
-input[type="button"] {
-	margin-left: 110px;
+/* Style the food log table */
+table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
 }
 
-#totalCalories {
-	margin: 20px;
-	font-size: 24px;
+th {
+    background-color: #3371b8;
+    color: #fff;
+    text-align: left;
 }
 
-.content-container {
-	/* display: flex;
-	flex-direction: column;
-	align-items: baseline;
-	margin-top: 50px; add margin-top property */
-	display: flex;
-	flex-wrap: wrap;
-	margin-top: 50px;
+th,
+td {
+    padding: 10px;
+    border: 1px solid #ddd;
 }
 
-.image-container {
-	/* position:absolute;
-	top: auto;
-	 right: 0px;
-	bottom: 100px; 
-	left: 815px;  */
-	
-	flex: 1;
-	text-align: right;
-	padding: 20px;
+/* Style the total calories text */
+#total-calories {
+    font-weight: bold;
 }
 
-.oatmeal-image {
-	height: 50%; /* use the full height of the container */
-	width: auto; /* keep the aspect ratio */
-	object-fit: cover; /* make sure the image fills the container */
-}
-
-#ListOfFood {
-	margin: 20px;
-	font-size: 24px;
-}
-
-#foodListHeading {
-	margin: 20px;
-	font-size: 24px;
-	font-weight: bold;
+/* Style the page footer */
+footer {
+    background-color: #3371b8;
+    color: #fff;
+    padding: 20px;
+    text-align: center;
 }
