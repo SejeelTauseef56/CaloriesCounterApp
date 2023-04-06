@@ -23,4 +23,4 @@ Contributions are welcome! Please feel free to submit a pull request or open an 
 
 
 
-![Alt Text](./mainpage.gif)
+![Main Page](./mainpage.png)
