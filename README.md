@@ -12,6 +12,7 @@ Calculate your body mass index (BMI) based on your height and weight.
 
 <h3>Getting Started</h3>
 Clone this repository:
+
 ```
 git clone https://github.com/SejeelTauseef56/CaloriesCounterApp.git
 ```
