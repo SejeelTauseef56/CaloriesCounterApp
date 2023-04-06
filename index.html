@@ -1,92 +1,58 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Food Logger</title>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="script.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Food Search</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
     <nav>
-		<ul>
-			<li class="nav-left"><a href="index.html">myCaloriepal</a></li>
-			<a href="tracker.html" class="login-link">Log In</a>
-			<a href="bmi_calculator.html" class="bmi-calculator">Calculate BMI</a>
-			<a href="progress.html"class="track-progress">Track Progress</a>
-		</ul>
-	</nav>
-    
+      <ul>
+        <li class="nav-left"><a href="index.html">myCaloriepal</a></li>
+        <a href="login.html" class="login-link">Log In</a>
+        <a href="bmi_calculator.html" class="bmi-calculator">Calculate BMI</a>
+        <a href="progress.html" class="track-progress">Track Progress</a>
+      </ul>
+    </nav>
 
-    <div class="container">
-        <form>
-            <div class="form-container">
-                <label for="food-name">Food Name:</label>
-                <input type="text" id="food-name" required>
+    <h1>Find out how many calories are in your food</h1>
+    <div id="search-button-container">
+    <form class="form1">
+      <label for="search-input">Search for a food:</label>
+      <input type="text" id="search-input" name="search-input" required />
+      <button type="submit">Search</button>
+    </form>
+  </div>
+    <div id="search-results"></div>
 
-                <label for="protein">Protein (grams):</label>
-                <input type="number" id="protein" required>
-
-                <label for="fat">Fat (grams):</label>
-                <input type="number" id="fat" required>
-
-                <label for="carbs">Carbs (grams):</label>
-                <input type="number" id="carbs" required>
-
-                <label for="portion-size">Portion Size:</label>
-                <input type="number" id="portion-size" required>
-
-                <button type="button" onclick="addFood()">Add</button>
-            </div>
-
-            <div class="tooltip">
-                <button class="info-button">How to Find Macros in Your Food</button>
-                <span class="tooltip-text">
-                  Macros, short for macronutrients, are the three key nutrients
-                  that make up the majority of the food we eat: protein, fat, and
-                  carbohydrates. To find the macros in your food, check the
-                  nutritional information on the packaging or look up the food
-                  online. You can also use a food tracking app to get the macros for
-                  specific foods. Be sure to measure the portion size of your food
-                  to get an accurate count of the macros you are consuming.
-                </span>
-              </div>
-
-        </form>
-        <div class="panel">
-            <h3>What to do on this page:</h3>
-            <ul>
-              <li>Enter your daily intake of fat, carbs, and protein in grams.</li>
-              <li>Click the "Calculate" button to see your total calorie intake.</li>
-              <li>Use the results to plan your meals and track your progress.</li>
-            </ul>
-          </div>
-          
-        <div class="log-container">
-            <h2>Food Log</h2>
-
-            <table id="food-log">
-                <thead>
-                    <tr>
-                        <th>Food Name</th>
-                        <th>Protein (g)</th>
-                        <th>Fat (g)</th>
-                        <th>Carbs (g)</th>
-                        <th>Portion Size</th>
-                        <th>Calories</th>
-                    </tr>
-                </thead>
-                <tbody>
-                </tbody>
-            </table>
-
-            <p>Total Calories: <span id="total-calories">0</span></p>
-        </div>
-
-       
+    <div id="myModal" class="modal">
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <h2>Tracking and Calculating Calories</h2>
+        <p>
+          Welcome to myCaloriepal! Here's how you can use our website to track and calculate your calories:
+        </p>
+        <ul>
+          <li>
+            To get started, use the "Calculate BMI" tab to calculate how many calories you need to consume per day based on your goals (gain weight/maintain/lose weight).
+          </li>
+          <li>
+            Next, use our built-in API to track what you consume per day. This will give you the macronutrients and calories each food has.
+          </li>
+          <li>
+            Finally, use the "Track Progress" page to track the total consumption of calories per day and monitor your progress towards your goals.
+          </li>
+        </ul>
+      </div>
     </div>
 
-</body>
+    <button class="buttonModal" onclick="openModal()">How to track and calculate your calories</button>
+
+    <canvas id="myChart" style="width:100%;max-width:600px"></canvas>
+
+    <script src="script.js"></script>
+  </body>
 </html>

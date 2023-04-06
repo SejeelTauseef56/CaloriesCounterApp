@@ -1,74 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Progress</title>
-   <link rel="stylesheet" href="progress.css">
-</head>
-<body>
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Progress Tracker</title>
+    <link rel="stylesheet" href="progress.css" />
+  </head>
+  <body>
     <nav>
       <ul>
         <li class="nav-left"><a href="index.html">myCaloriepal</a></li>
         <a href="login.html" class="login-link">Log In</a>
         <a href="bmi_calculator.html" class="bmi-calculator">Calculate BMI</a>
-        <a href="progress.html"class="track-progress">Track Progress</a>
+        <a href="progress.html" class="track-progress">Track Progress</a>
       </ul>
     </nav>
     <div class="intro-text">
-			<h1>The Tools for Your Goals </h1>
-			<h2>Trying to lose weight, tone up, lower your BMI, or invest in your overall health? We give you the right features to get there.
-
+      <h1>The Tools for Your Goals</h1>
+      <h2>
+        Trying to lose weight, tone up, lower your BMI, or invest in your
+        overall health? We give you the right features to get there.
       </h2>
 
-			<a href="#progress-container" class="button-58">Scroll down</a>
-  
-		</div>
+      <div class="calculator-container" id="progress-container">
+        <a href="#progress-container" class="button-58">Scroll down</a>
+      </div>
+    </div>
     <div class="image-container-flex">
       <div class="image-container">
-        <img src="img/diary.e6e4c438.svg" alt="">
+        <img src="img/diary.e6e4c438.svg" alt="" />
         <h2 class="title1">Learn. Track. Improve.</h2>
-        <p class="p1">Keeping a food diary helps you understand your habits and increases your likelihood of hitting your goals.</p>
-      </div>
-      <div class="image-container">
-        <img src="img/logging.svg" alt="">
-        <h2 class="title1">Logging Simplified.</h2>
-        <p class="p1">Save meals and recipes, and use our progress tracker for fast and easy logging.
-
+        <p class="p1">
+          Keeping a food diary helps you understand your habits and increases
+          your likelihood of hitting your goals.
         </p>
       </div>
       <div class="image-container">
-        <img src="img/shoes.svg" alt="">
+        <img src="img/logging.svg" alt="" />
+        <h2 class="title1">Logging Simplified.</h2>
+        <p class="p1">
+          Save meals and recipes, and use our progress tracker for fast and easy
+          logging.
+        </p>
+      </div>
+      <div class="image-container">
+        <img src="img/shoes.svg" alt="" />
         <h2 class="title1">Stay Motivated.</h2>
-        <p class="p1">Join the World’s Largest Fitness Community for advice, tips, and support 24/7.</p>
+        <p class="p1">
+          Join the World’s Largest Fitness Community for advice, tips, and
+          support 24/7.
+        </p>
       </div>
     </div>
-    
+    <div class="tracker-container">
+      <h1 class="headerforcal">Track Your Daily Calories</h1>
+      <form class="formTrack">
+        <label for="date-input">Date:</label>
+        <input type="date" id="date-input" name="date-input" />
 
-    <div class="progress-container">
-      <form>
-        <label for="date">Date:</label>
-        <input type="date" id="date" name="date"><br><br>
-        
-        <label for="calories">Total calories consumed:</label>
-        <input type="number" id="calories" name="calories"><br><br>
-        
-        <label for="goal">Original calorie intake goal:</label>
-        <input type="number" id="goal" name="goal"><br><br>
-        
-        <button type="button" class="shadow-btn" onclick="calculate()">Calculate</button><br><br>
-        
-        <p id="result"></p>
-  
-        <button type="button" class="shadow-btn" onclick="addToList()">Add to list</button><br><br>
+        <label for="calories-input">Calories:</label>
+        <input
+          type="number"
+          id="calories-input"
+          name="calories-input"
+          min="0"
+        />
+
+        <button class="button-34" type="button" onclick="addEntry()">
+          Add Entry
+        </button>
       </form>
-      
-      <div id="list-container"></div>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Date</th>
+            <th>Calories</th>
+          </tr>
+        </thead>
+        <tbody id="tracker-body"></tbody>
+      </table>
     </div>
-  
+
     <script src="progress.js"></script>
-   
-        
-    </body>
-    </html>
+  </body>
+</html>

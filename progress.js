@@ -1,34 +1,45 @@
-let calorieList = [];
+let entries = [];
 
-function calculate() {
-  const calories = document.getElementById("calories").value;
-  const goal = document.getElementById("goal").value;
-  
-  if (calories <= goal) {
-    document.getElementById("result").innerHTML = "You have consumed less than your target.";
-  } else {
-    document.getElementById("result").innerHTML = "You have consumed more than your target.";
-  } if (calories == goal) {
-    document.getElementById("result").innerHTML = "Great! You're on track";
-  }
+function addEntry() {
+    const dateInput = document.getElementById("date-input");
+    const caloriesInput = document.getElementById("calories-input");
+
+    const dateValue = dateInput.value;
+    const caloriesValue = caloriesInput.value;
+
+    if (dateValue && caloriesValue) {
+        const entry = { date: dateValue, calories: caloriesValue };
+        entries.push(entry);
+        updateTracker();
+        clearForm();
+    }
 }
 
-function addToList() {
-  const date = document.getElementById("date").value;
-  const calories = document.getElementById("calories").value;
-  
-  calorieList.push({ date: date, calories: calories });
-  
-  const listContainer = document.getElementById("list-container");
-  const list = document.createElement("ul");
-  
-  for (let i = 0; i < calorieList.length; i++) {
-    const item = document.createElement("li");
-    const text = document.createTextNode(`Date: ${calorieList[i].date}, Calories: ${calorieList[i].calories}`);
-    item.appendChild(text);
-    list.appendChild(item);
-  }
-  
-  listContainer.innerHTML = "";
-  listContainer.appendChild(list);
+function updateTracker() {
+    const trackerBody = document.getElementById("tracker-body");
+    trackerBody.innerHTML = "";
+
+    entries.forEach(entry => {
+        const row = document.createElement("tr");
+
+        const dateCell = document.createElement("td");
+        dateCell.innerText = entry.date;
+        row.appendChild(dateCell);
+
+        const caloriesCell = document.createElement("td");
+        caloriesCell.innerText = entry.calories;
+        row.appendChild(caloriesCell);
+
+        trackerBody.appendChild(row);
+    });
 }
+
+function clearForm() {
+    const dateInput = document.getElementById("date-input");
+    const caloriesInput = document.getElementById("calories-input");
+
+    dateInput.value = "";
+    caloriesInput.value = "";
+}
+
+updateTracker();

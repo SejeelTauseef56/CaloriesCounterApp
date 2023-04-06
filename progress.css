@@ -1,13 +1,25 @@
 body {
-  background-color:  #ffffff;
 	font-family: Arial, sans-serif;
 	font-size: 16px;
 	margin: 0;
 
     
   }
+  .exerciseContainer{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 200px;
+
+  }
   
-  
+  .exerciseContainer h1{
+    font-size: 30px;
+    font-weight: 600;
+    color: #0066EE;
+    margin-bottom: 20px;
+  }
   .image-container-flex {
     display: flex;
     justify-content: space-around;
@@ -243,3 +255,156 @@ body {
 	  0 6px 20px 0 rgba(0, 0, 0, 0.1);
   }
   
+
+/* CSS */
+.button-34 {
+  background: #5E5DF0;
+  border-radius: 999px;
+  box-shadow: #5E5DF0 0 10px 20px -10px;
+  box-sizing: border-box;
+  color: #FFFFFF;
+  cursor: pointer;
+  font-family: Inter,Helvetica,"Apple Color Emoji","Segoe UI Emoji",NotoColorEmoji,"Noto Color Emoji","Segoe UI Symbol","Android Emoji",EmojiSymbols,-apple-system,system-ui,"Segoe UI",Roboto,"Helvetica Neue","Noto Sans",sans-serif;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  opacity: 1;
+  outline: 0 solid transparent;
+  padding: 8px 18px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: fit-content;
+  word-break: break-word;
+  border: 0;
+}
+
+  /* .tracker-container {
+    position: absolute;
+   
+    top: 80%;
+    left: 50%;
+    width: 100%;
+    transform: translate(-50%, 50%);
+    padding-bottom: 10%;
+    background: rgb(179,200,237);
+    background: linear-gradient(90deg, rgba(179,200,237,1) 0%, rgba(0,178,236,1) 50%, rgba(179,200,237,1) 100%);
+  }
+
+  .headerforcal{
+
+    text-align: center;
+  }
+  
+  .formTrack{
+    text-align: center;
+  }
+
+  /* table {
+    margin: auto;
+  }
+  thead th {
+    text-align: center;
+    padding-top: 25px;
+
+  } */
+
+  /* table {
+    width: 100%;
+    margin: auto;
+    border-collapse: collapse;
+  }
+  thead th {
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    border-bottom: 2px solid #0066EE;
+  }
+  tbody td {
+    text-align: center;
+    width: 50%;
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+  } */
+   
+  
+  .tracker-container {
+    margin: 300px auto;
+    margin-bottom: 50px;
+   padding: 25px;
+    border: 1px solid #ddd;
+    border-radius: 15px;
+    max-width: 600px;
+    background: rgb(105,175,219);
+background: linear-gradient(0deg, rgba(105,175,219,1) 0%, rgba(45,101,253,1) 100%);
+  }
+  
+  .headerforcal {
+    font-size: 28px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 20px;
+    color:#fff
+  }
+  
+  .formTrack {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+  }
+  
+  .formTrack label {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #fff;
+  }
+  
+  .formTrack input[type="date"],
+  .formTrack input[type="number"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 100%;
+  }
+  
+  /* .formTrack button[type="button"] {
+    background-color: #0066EE;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    border: none;
+    padding: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+  } */
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  thead th {
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 2px solid #ddd;
+    color: #fff;
+  }
+  
+  tbody td {
+    font-size: 16px;
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  tbody td:first-child {
+    font-weight: bold;
+  }
+ 

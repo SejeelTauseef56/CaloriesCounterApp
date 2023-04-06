@@ -1,83 +1,34 @@
-/* Add some basic styles to the body */
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
+
+/* Center the content vertically and horizontally */
+html, body {
+  height: 100%;
+  margin: 0;
+  font-family: Arial, sans-serif;
+	font-size: 16px;
 }
 
 
-/* Tooltip */
-.tooltip {
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  background: #f5f5f5;
+  background: linear-gradient(to bottom, #ffffff, #f5f5f5);
+  background: #f8f8f8;
+}
+.form1{
+
     position: relative;
-    display: inline-block;
-  }
+    z-index: 9999; /* or any high value */
+    /* other styles */
   
-  .tooltip .info-button {
-    background-color: #3371b8;
-    color: #fff;
-    border: none;
-    padding: 5px 10px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
   
-  .tooltip .tooltip-text {
-    visibility: hidden;
-    width: 200px;
-    background-color: #3371b8;
-    color: #fff;
-    text-align: center;
-    border-radius: 5px;
-    padding: 10px;
-    position: absolute;
-    z-index: 1;
-    bottom: 125%;
-    left: 50%;
-    margin-left: -100px;
-    opacity: 0;
-    transition: opacity 0.3s;
-  }
-  
-  .tooltip .tooltip-text::after {
-    content: "";
-    position: absolute;
-    top: 100%;
-    left: 50%;
-    margin-left: -5px;
-    border-width: 5px;
-    border-style: solid;
-    border-color: #3371b8 transparent transparent transparent;
-  }
-  
-  .tooltip:hover .tooltip-text {
-    visibility: visible;
-    opacity: 1;
-  }
-  .panel {
-    position: absolute;
-    top: 130px;
-    right: 50px;
-    width: 300px;
-    background-color: #f1f1f1;
-    padding: 20px;
-    border-radius: 10px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.3);
-  }
-  
-  .panel h3 {
-    margin-top: 0;
-  }
-  
-  .panel ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
-  }
-  
-  .panel li {
-    margin-bottom: 10px;
-  }
-  
-  nav {
+}
+nav {
 	position: absolute;
 	top: 0;
 	right: 0;
@@ -95,7 +46,7 @@ body {
   
   .nav-left {
 	float: left;
-	font-weight:bold;
+	font-weight: bold;
 	padding-top: 5px;
 	font-size: 24px;
 	font-weight: 550;
@@ -104,10 +55,31 @@ body {
 	letter-spacing: 2px;
 	display: block;
   }
+
   
+
   .nav-left a {
 	text-decoration: none;
 	color: #0f53ff;
+  }
+  .form1 button:hover {
+    animation: pulse 1s infinite;
+  }
+  
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.1);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+  #search-results {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    margin-top: 60px;
   }
   
   .nav-left a:hover {
@@ -168,93 +140,150 @@ body {
 	color: #ffffff;
   }
 
-/* Style the page header */
-
-.container {
-    margin-top: 100px;
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-/* Style the form */
+h1 {
+  
+    font-size: 3rem;
+  
+  
+  margin-top: 10rem; /* add margin to create space */
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+
+
 form {
-    margin: 20px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    background-color: #f9f9f9;
+  display: flex;
+ position: relative;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 1rem;
 }
 
-/* Style the info container */
-.info-container {
-    width: 35%;
-    padding: 20px;
-    background-color: #f2f2f2;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    float: right;
-    margin: 20px;
-}
-
-.info-container h2 {
-    font-size: 1.2rem;
-    margin-bottom: 10px;
-}
-
-.info-container p {
-    font-size: 1rem;
-}
-
-/* Style the form labels */
 label {
-    display: block;
-    margin-bottom: 10px;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
 }
 
-/* Style the form inputs */
-input[type="text"],
-input[type="number"] {
-    padding: 10px;
-    border-radius: 5px;
-    border: 1px solid #ddd;
-    margin-bottom: 10px;
+input[type="text"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  margin-bottom: 0.5rem;
 }
 
-/* Style the Add button */
-button[type="button"] {
-    background-color: #3371b8;
-    color: #fff;
-    padding: 10px 20px;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
+button[type="submit"] {
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #008CBA;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
 }
 
-/* Style the food log table */
-table {
-    width: 100%;
-    margin-top: 20px;
-    border-collapse: collapse;
+button[type="submit"]:hover {
+  background-color: #006B8F;
 }
 
-th {
-    background-color: #3371b8;
-    color: #fff;
-    text-align: left;
+#search-results {
+  margin-top: 1rem;
+  font-size: 1.2rem;
+  border-radius: 5px;
+  overflow-y:scroll;
+  border: none;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+  padding: 1rem;
 }
 
-th,
-td {
-    padding: 10px;
-    border: 1px solid #ddd;
+
+.chartMenu {
+  width: 100vw;
+  height: 40px;
+  background: #1A1A1A;
+  color: rgba(54, 162, 235, 1);
+  margin-top: 2rem;
+}
+.chartMenu p {
+  padding: 10px;
+  font-size: 20px;
+}
+.chartCard {
+  width: 100vw;
+  height: calc(100vh - 40px);
+  background: rgba(54, 162, 235, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.chartBox {
+  width: 700px;
+  padding: 20px;
+  border-radius: 20px;
+  border: solid 3px rgba(54, 162, 235, 1);
+  background: white;
 }
 
-/* Style the total calories text */
-#total-calories {
-    font-weight: bold;
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
 }
 
-/* Style the page footer */
-footer {
-    background-color: #3371b8;
-    color: #fff;
-    padding: 20px;
-    text-align: center;
+/* Modal Content/Box */
+.modal-content {
+  background-color: #fefefe;
+  margin: 5% auto; /* 15% from the top and centered */
+  padding: 20px;
+
+  border: 1px solid #888;
+  width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+}
+.buttonModal{
+  margin-top: 30px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  border: none;
+  background-color: #008CBA;
+  color: #fff;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.buttonModal, .form1 {
+  position: relative;
+  z-index: 1;
 }
